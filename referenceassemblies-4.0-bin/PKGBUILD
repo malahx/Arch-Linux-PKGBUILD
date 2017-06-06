@@ -1,0 +1,320 @@
+# $Id$
+# Maintainer: Malah <malah@neuf.fr>
+
+pkgname=referenceassemblies-4.0-bin
+pkgver=1.0
+pkgrel=1
+pkgdesc='Mono runtime - compiler compatibility for .NET 4.0'
+arch=('any')
+url='https://github.com/mono/reference-assemblies'
+license=('MIT')
+depends=('mono')
+makedepends=('curl')
+
+# Part of mono 5.0.0.100
+# 'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Posix.dll'
+# 'https://github.com/mono/reference-assemblies/raw/master/v4.0/mscorlib.dll'
+
+source=('https://github.com/mono/reference-assemblies/raw/master/v4.0/Accessibility.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Commons.Xml.Relaxng.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/cscompmgd.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/CustomMarshalers.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/I18N.CJK.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/I18N.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/I18N.MidEast.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/I18N.Other.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/I18N.Rare.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/I18N.West.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/IBM.Data.DB2.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/ICSharpCode.SharpZipLib.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.Build.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.Build.Engine.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.Build.Framework.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.Build.Tasks.v4.0.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.Build.Utilities.v4.0.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.CSharp.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.VisualBasic.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.VisualC.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Microsoft.Web.Infrastructure.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.C5.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Cairo.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Cecil.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.CompilerServices.SymbolWriter.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.CSharp.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Data.Sqlite.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Data.Tds.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Debugger.Soft.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Http.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Management.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Messaging.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Messaging.RabbitMQ.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Security.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Security.Win32.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Simd.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.Tasklets.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Mono.WebBrowser.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/monodoc.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/Novell.Directory.Ldap.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/PEAPI.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/RabbitMQ.Client.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ComponentModel.Composition.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ComponentModel.DataAnnotations.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Configuration.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Configuration.Install.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Core.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Data.DataSetExtensions.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Data.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Data.Linq.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Data.OracleClient.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Data.Services.Client.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Data.Services.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Design.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.DirectoryServices.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.DirectoryServices.Protocols.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Drawing.Design.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Drawing.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Dynamic.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.EnterpriseServices.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.IdentityModel.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.IdentityModel.Selectors.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Json.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Json.Microsoft.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Management.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Messaging.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Net.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Numerics.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Runtime.Caching.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Runtime.DurableInstancing.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Runtime.Remoting.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Runtime.Serialization.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Runtime.Serialization.Formatters.Soap.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Security.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ServiceModel.Activation.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ServiceModel.Discovery.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ServiceModel.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ServiceModel.Routing.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ServiceModel.Web.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.ServiceProcess.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Transactions.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.Abstractions.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.ApplicationServices.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.DynamicData.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.Extensions.Design.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.Extensions.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.Routing.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Web.Services.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Windows.Forms.DataVisualization.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Windows.Forms.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Xaml.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Xml.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/System.Xml.Linq.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/WebMatrix.Data.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/v4.0/WindowsBase.dll'
+        'https://github.com/mono/reference-assemblies/raw/master/LICENSE')
+
+sha256sums=('6c3d467af1397957cc15d6eb17063587b4013896fa35b592473bb50fbdd09e8c'
+            '06ad5e16223ff7acd1f84acab7f97bb6d0644e50462b9cc049e45d680fac6850'
+            'e60e1294ad816165ecc39bce813a3356bdbe5cf2589bb73e833295a6d98a41c7'
+            '5c5c71ca6247870f8abc6ff3160a5d1efaf43486e45a998b828493bef5f44583'
+            '230d94f7c5204130f8131e3373a517dbf7b25ff8d61379780174e11f115f34a4'
+            'd2880aae4ef85d79582c6342a9c7761b1a712a311fdcbf2e374e05b89f52e31d'
+            '187184711bdb8cb3b4b5c8cf47565e42b09fd10ec064791e180fe981ad83e0a9'
+            '1d6b9ccf02c0cedbba6151401862a31c01b50887c7052e3ac293ba4154d154f8'
+            'c56150ebc5f23544bd9cc5c1fce883ec9b8c16b00708e5797647c2eb264561c9'
+            '791674567d5c8d12a338c807fc8b02fb13f946c33adb13922e28b7b204dfc771'
+            'c3a53e03056844eaee11257c89ead4e3d3a086441841aa8c1b6650f4881fe818'
+            'e7d4686f9a48af09e73c3c9d74c3d8d72a4f8ca0519f472a21e9777dae8bb558'
+            '32b909ca2c59376f9c818039895ac11215bc2101940c6b2882e3dbfe60ace743'
+            'a03d0a51f0bdd752151699641da09829569b0cfa5b6849ba6b757202b708d71f'
+            '432afad698cc7f1e783d61a2ed852ce4f1bf117dbdbbe7078c4e43d61f0eaf13'
+            '67b51239c6e63d938fb24d0aa1a0a51506715c3b85a90460f17a9d64d379837c'
+            '8eb0eb10d242c52eb0da13e65350a2eb62fb703c4b6458154245c300059b35a0'
+            '6a59a43ea4ed65a8b8224a03942923294501cf3ade48b8e13bbedb07a516b829'
+            'e3bf96adbda89403d351720ed8872c53715bd1056de99936154135fccea0974d'
+            '18de9aa27cc620dde165fff5327cc8b58807e0c61cb35210fb17d4c3460e6fbc'
+            'dda81c71b42cdb34e23d92c9ab793167fb80319445f0dfe434a2628f7b261f21'
+            '9435ea7b812da50fc04656d22dcb3d813059dacd12f73799a1ec2abc1468a81b'
+            '5529e12f1ffa97ea5ea742b5f9f61f5de03ecdd9248685c95c37ebe5a97d9544'
+            '3c85fad633df58f859ef18aabd155f36ce74f912ddb2846268cd55823ed15920'
+            '2dceca1fa5913089df578166c9aa97c0e09054a572d0e43f8ad6ca92224e425a'
+            '38106916b6deda677700aeed136dcb2541e4f3a55695e2d1b32de2ecf48222d1'
+            'bfbbffff9ca19c4cf7ae3705297f30d9509ed7c7d1886d08f782a61b5bb1a2df'
+            'ea66dbeb7ab8387f3b9aa0af765dfdbb932de46a1a6c91f6d85752dafd47e820'
+            '00d367425567afb7983f0b51ad3db38da90610f69a76ad4a4cf79ad84386a686'
+            '5e027370d777f3fcbc31f438fd5c98c349dbd8b8025759fc76d7b12ba6730985'
+            '1fa0a832d118cd0318044d3e0b2a859bf82a6121ae920fcd10b8d2cc83ffd75c'
+            '2c8bd94708b0f7765bc6998531d307d12614e65a4b25a33573f516fd0800ac6f'
+            'b94fe63388699f137616e843db8b9a9817a2739e77d4c43f070c91a9b82457e7'
+            '05c3cbc7ba9c9dc2127bc19dd8316a21809b34231a97472aac6656b2f9ac178e'
+            'b8c758ebc1ab45c89b9ebaca0d47aef8daf032af150c90e398739be4a6ef5f0e'
+            '532cab1f033eb592abc5c9df455be2e821d9ae50d62839b2e5439f9847da35b5'
+            '3423747fa5376aeef6559842f47dd8d727048c82f9b3b1546fd944157de180c1'
+            '5946cca4e86403b0ec7b37fc5a95df255ee5746ebfb29168e0d2e56ecc4f8d84'
+            'bb012af39587018c5513d34b14df814e1579abd1dc7b4b741c30a377e6bb4e78'
+            'aad1eaf031cdfc1b3fa4832b759f5bee170fd9be02ff704553b644d7d177d2a7'
+            '4984cae83b85a2facd0154dc89df7417c4900d2775d2ffc2c909ffb99aaf5ee8'
+            '567f03f5e492b780dc7d687376302b9d9238beeb58716bfd9a057a98d3e9e9da'
+            'd1fd7f5114e74a775c5e42e85bf5bfc1ed0387cfee1bbaa1cfc11a82b2f4dc87'
+            '0fdfb59abf9397517b695fb20eb4e58bc32fd820d4d120fd2b084e4c83e53b8b'
+            '53c935e92596524179727f2b1a4ea9491640d87d71ae6ace5ffb2f34bbceaccc'
+            '4e9e540cb7b0fc9789a9cb6bfdcdd0fa757d559bf364590e1436b3f165219014'
+            '1859548ac9f909fb2f117fb099e22a2981694feec1a8bebac848365e90367fc9'
+            '07caaafeec90d7025804ed674bd8019099cb79c42509d9ff59488d3e41876537'
+            '3d51536e6884252809bd4bea79ac77a0d3ac3f1f458e10041259b15b4e7e7223'
+            '720b9c7956694d84c220776bb25f888e5fdb8cd12a99b9d54e08d741eae183c2'
+            '2665e7784d54020067d2d4c3c03d49c55faa0eeabef2327c2453c0baf0b95983'
+            '87395ee0a3fcf02c5b180ed36972d7218d3c90edbee06db2f01bc8a2f90cf591'
+            '271e1e63ba4d7205b2b6ac1bed83a0aad1d7d46697e0063a864ba4fef9e56390'
+            'ccc2cc35752e75cc44ac37d9f298bf8da7c9acd807acc026259b70bc06f13388'
+            '7985b11f6e87c85d1a31628cb47c7a4c4f78daba899b96cd3d7897186757ab77'
+            '6a6f7c2627ec597459702fff687084b88262f156ab95263f0f2f3e705ca23981'
+            '49636283124d77cad96631b219e99933c9fbc6f521d50efc9ecc80073147d9ae'
+            '102f6b676450d0091f0276f7b1ee8b943ab660de664f6f650a4ed128d2696980'
+            '497a784112eec5ba04534c7ec383e2bb7d4faa6b6e819c208d2d8eea3c6e8576'
+            'be273730c7cc5095740d703296406ebb4f55f07be53c7976468b0595053e60e0'
+            '9c254c05ce159e010487f46749e10017cd493543b2d139b32ecaaeee22d325c4'
+            '4f0b7219220af8b29d6d8517a10d333e28fd137d20b5cb053806dca672027699'
+            '052b920ef9b39475277c1ef8974c08eaec60c8849c667245d253bdaa5a344633'
+            '935bf180231e8a5f6b099e69846fe4d90afd44a895937017ff677e363e043415'
+            'f015280d41dcbc863beac9c682d72c601e39afda825192e84839604cf4ca82f7'
+            '0fa14671a424bc16b842f1109e5ddb8a0c04406c11fc64c8a5f7d0313acc64f8'
+            'a120a73a5f781cfc119bab7f91f65019885a94c5907d360eb38fc37c07e611fa'
+            '3f0a36d21b5187e4e806706b85dcc2614dca93fd33b483c94f1187c544b41596'
+            '812f219ad44407908436a43b7991e017e54157578af6c66bfda644fa114e5780'
+            '47fce7657c3b2b59b8d530dc02b2854111e86c4ae4a3463c523cdec9fcf0d284'
+            'f121f9321630255ffe604b4a133e72dc44122cc3c4ba77c47ec710b2daa2bd51'
+            'b65a07ff1657cc58baffc18394f57482f601796277afdc257aa18fe012e62443'
+            'ae79cad981650ad4f181b9dfb8c107733a4bc850228b2e2c9ba1365a591c33d2'
+            'd24e600a715580784a4d7ff6a3e7d9e01e5b48fa585ad6d813ce42493b3a0011'
+            '0e68b4aa350528d6777c2638cca5229886c9045a82ca1dbabb506bb2c7028aa7'
+            '8578eaf5634a8dc47e4f3d6fcad906a9b1fb4241a11e731512d00a2162f72cf2'
+            'c7b277df2df513e92a9b5efd5a1618eeafd8816110d1fce818ca0e53bbf5b209'
+            '2cbff256915dd331bca5b861c8715e9d1baaeb1a92d2d6d97b17ca12bd5edf2b'
+            '0995b61fbaafb73472ee09acb1ae9e62f9968f034129851a2e2e6fd4d60fa04b'
+            'c4c4ece63d56b55f108db763114f3dad31749831d1967fb4195f18e6a9efc3f3'
+            '58fa373304caea612dfef6561af553eb45e3ae5fa64b550b309d5df3ec4edc04'
+            'b8bf8bfd0e723a1c9c5fb9a1e5a8ebeeee04c6a0af65dc90ca6a662cc032aa25'
+            '3a956f1b4762ede00f9106da0e32758c2ea5222328db33a08f6e06c861e94e25'
+            '2517f3f604ce07b0ffc3f03d7bf139594eeacb46382131b5828ba9addec48a93'
+            '0cedd4fed90f86d5d917c6126637e4ba09d3802fb4010fae1e97505eb62cef50'
+            'f8c4fdf7c81b42170e46ede61a28434550950896d7e75eb73ba9d3e22270d8cf'
+            '556865b58eb947f47afd399e35bcb07187272b6043839d65d6c645b24afd1d1b'
+            '3b8c2bb53035f904aa2c2bd9fa0f85ea8f5e4ea3dbcf0884bfb10a147159298b'
+            '435848855428352a3924a79998ff67eb0efa59fa3f7176d03931be8c77a8dc3c'
+            'bb671d7955fd329397d74d5475aec296aaf880cb18bed04f283d862b013468e6'
+            'afdd27238057498b38de4a6043cf10d9a85b1302e210ec361998abdc1ef2cdcd'
+            '5ac34d5b214bfa6bf1d38f9c9222915f69524dcbd66c3953abec0735cd5bcaa7'
+            '83e6cfa02f7d6acf80d0b655da02ddc228f34235a3d89fe5383cebe70c50ad72'
+            'dba18d71f64b8184a2ff16d415c8be6a9d14d9195848913bb0aa77dbd2a5098e'
+            '22ebf0e69c890d76afaf934b9d7185546296cf7edf3a25e3b11e322b8c4d8702'
+            '6e85df0941e2c60b149b79f0e1addfcea7a02c63084646cc075166a23672f348'
+            '6b0764f44e0e628801e5ed77489c09598aa9c9939c755dbb5e59b60f39b90179'
+            'cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310')
+
+package() {
+  
+  # Part of mono 5.0.0.100
+  #install -Dm777 mscorlib.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  #install -Dm777 Mono.Posix.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+
+  install -Dm777 Accessibility.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Commons.Xml.Relaxng.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 cscompmgd.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 CustomMarshalers.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 I18N.CJK.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 I18N.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 I18N.MidEast.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 I18N.Other.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 I18N.Rare.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 I18N.West.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 IBM.Data.DB2.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 ICSharpCode.SharpZipLib.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.Build.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.Build.Engine.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.Build.Framework.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.Build.Tasks.v4.0.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.Build.Utilities.v4.0.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.CSharp.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.VisualBasic.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.VisualC.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Microsoft.Web.Infrastructure.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.C5.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Cairo.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Cecil.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.CompilerServices.SymbolWriter.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.CSharp.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Data.Sqlite.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Data.Tds.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Debugger.Soft.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Http.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Management.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Messaging.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Messaging.RabbitMQ.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Security.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Security.Win32.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Simd.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.Tasklets.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Mono.WebBrowser.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 monodoc.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 Novell.Directory.Ldap.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 PEAPI.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 RabbitMQ.Client.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ComponentModel.Composition.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ComponentModel.DataAnnotations.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Configuration.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Configuration.Install.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Core.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Data.DataSetExtensions.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Data.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Data.Linq.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Data.OracleClient.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Data.Services.Client.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Data.Services.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Design.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.DirectoryServices.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.DirectoryServices.Protocols.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Drawing.Design.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Drawing.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Dynamic.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.EnterpriseServices.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.IdentityModel.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.IdentityModel.Selectors.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Json.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Json.Microsoft.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Management.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Messaging.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Net.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Numerics.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Runtime.Caching.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Runtime.DurableInstancing.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Runtime.Remoting.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Runtime.Serialization.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Runtime.Serialization.Formatters.Soap.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Security.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ServiceModel.Activation.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ServiceModel.Discovery.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ServiceModel.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ServiceModel.Routing.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ServiceModel.Web.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.ServiceProcess.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Transactions.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.Abstractions.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.ApplicationServices.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.DynamicData.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.Extensions.Design.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.Extensions.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.Routing.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Web.Services.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Windows.Forms.DataVisualization.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Windows.Forms.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Xaml.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Xml.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 System.Xml.Linq.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 WebMatrix.Data.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm777 WindowsBase.dll -t "${pkgdir}"/usr/lib/mono/4.0/
+  install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/referenceassemblies-4.0-bin/
+}
