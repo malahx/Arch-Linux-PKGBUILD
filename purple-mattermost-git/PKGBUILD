@@ -3,8 +3,8 @@
 
 pkgname=purple-mattermost-git
 _pkgname=purple-mattermost
-pkgver=v0.0.r179.4524538
-_pkgver=v0.0.
+pkgver=v1.1.r179.4524538
+_pkgver=v1.1.
 pkgrel=1
 pkgdesc="A libpurple/Pidgin plugin for Mattermost."
 url='https://github.com/EionRobb/purple-mattermost'
