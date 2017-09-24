@@ -33,7 +33,6 @@ build() {
   export PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig
   export CFLAGS+=" -I/usr/include/openssl-1.0"
   export LDFLAGS+=" -L/usr/lib/openssl-1.0 -lssl"
-  export MONO_IOMAP=all
 
   ./configure --prefix=/usr --profile=stable 
   XDG_CONFIG_HOME="$srcdir"/config LD_PRELOAD="" make 
